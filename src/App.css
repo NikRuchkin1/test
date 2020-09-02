@@ -1,20 +1,11 @@
 .App {
-  text-align: center;
-  margin: auto;
-  line-height: auto;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-body {
-}
-
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.container-fluid{
-  padding: 0px !important;
+.Main {
+    margin: auto;
+    display: flex;
 }

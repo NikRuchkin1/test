@@ -1,5 +1,237 @@
 .head {
-    color: #949494;
-    font-weight: 300;
-    font-size: 25px;
+    font-size: 36px;
+    font-family: "Exo2.0";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
 }
+
+@font-face {
+	font-family: 'Trebuchet MS';
+    src: url('/components/productСards/font/Exo2.0-Thin.otf') format('otf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.header {
+    color: #fff;
+}
+
+.box {
+    display: block;
+    float: left;
+    margin: 30.5px;
+    border-radius: 0px 7px 7px 7px;
+    padding: 24px 50px 0px 50px;
+    width:320px;
+    background-image: url('./image/Photo.png');
+    height: 480px;
+}
+
+.redBox {
+    display: block;
+    float: left;
+    margin: 30.5px;
+    border-radius: 0px 7px 7px 7px;
+    padding: 24px 50px 0px 50px;
+    width:320px;
+    background-image: url('./image/selectPhoto.png');
+    height: 480px;
+}
+
+.disabledBox {
+    display: block;
+    float: left;
+    margin: 30.5px;
+    border-radius: 0px 7px 7px 7px;
+    padding: 24px 50px 0px 50px;
+    width:320px;
+    background-image: url('./image/disabledPhoto.png');
+    height: 480px;
+}
+
+
+.nameCard {
+    font-size: 48px;
+    font-family: "Trebuchet MS";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.header {
+    font-size: 16px;
+    font-family: "Trebuchet MS";
+    color: rgb(102, 102, 102);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.taste {
+    font-size: 24px;
+    font-family: "Trebuchet MS";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.numberOfServings {
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: "Trebuchet MS";
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+    line-height: 1.143;
+    text-align: left;
+}
+
+.present {
+    position: absolute;
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: "Trebuchet MS";
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+    line-height: 1.143;
+    text-align: left;
+}
+
+.weight {
+    margin-top: 17px;
+    font-size: 39px;
+    font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    line-height: 0.524;
+    text-align:center;
+}
+
+.elipse {
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(22, 152, 217);
+    width: 75px;
+    height: 75px;
+    margin: 261px 0px 0px 181px;
+}
+
+.redElipse {
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(217, 22, 103);
+    width: 75px;
+    height: 75px;
+    margin: 261px 0px 0px 181px;
+}
+
+.greyElipse {
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(179, 179, 179);
+    width: 75px;
+    height: 75px;
+    margin: 261px 0px 0px 181px;
+}
+
+.kg {
+    font-size: 23px;
+    margin-top: 15px;
+    font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    line-height: 0.524;
+    text-align:center;
+}
+
+.bottomDescription {
+    position: absolute;
+    margin: 360px 0px 0px -50px;
+    width: 320px;
+    text-align: center !important;
+    font-size: 13px;
+    font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    line-height: 1.231;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+}
+
+.bottomDescriptionDisabled {
+    font-size: 13px;
+    font-family: "Trebuchet MS";
+    color: rgb(255, 255, 102);
+    line-height: 1.231;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+    position: absolute;
+    margin: 360px 0px 0px -50px;
+    width: 320px;
+    text-align: center !important;
+}
+
+
+.link {
+    border-bottom: 1px dashed rgb(22, 152, 217);
+    font-family: "Trebuchet MS";
+    color:rgb(22, 152, 217);
+}
+
+.point {
+    color:rgb(22, 152, 217);
+    font-family: "Trebuchet MS";
+}
+
+.point:hover {
+    color: rgb(22, 152, 217);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(22, 152, 217);
+    text-decoration: none;
+}
+
+.greyNameCard {
+    font-size: 48px;
+    font-family: "Trebuchet MS";
+    color: rgba(179, 179, 179, 0.502);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.greyHeader {
+    font-size: 16px;
+    font-family: "Trebuchet MS";
+    color: rgba(179, 179, 179, 0.502);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.greyTaste {
+    font-size: 24px;
+    font-family: "Trebuchet MS";
+    color: rgba(179, 179, 179, 0.502);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.greyPresent {
+    position: absolute;
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: "Trebuchet MS";
+    color: rgba(179, 179, 179, 0.502);
+    font-weight: bold;
+    line-height: 1.143;
+    text-align: left;
+}
+
+.redHeader {
+    font-size: 16px;
+    font-family: "Trebuchet MS";
+    color: rgb(230, 46, 122);
+    line-height: 1.2;
+    text-align: left;
+}
+
