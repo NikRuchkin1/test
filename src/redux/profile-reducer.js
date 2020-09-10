@@ -1,103 +1,62 @@
-const SELECT = 'SELECT';
-const DEFAULT = 'DEFAULT';
-const HOVER = 'HOVER';
+import {cardAPI} from '../components/api/Api'
+
+const SELECTLIKE = 'SELECTLIKE';
+const NOTSELECTLIKE = 'NOTSELECTLIKE';
+const SETCARD = 'SETCARD'
 
 const initialState = {
     cardsArray: [
         {   id:1,
-            header: 'Сказочное заморское яство',
-            nameCard: 'Нямушка',
-            taste: 'с фуа-гра',
-            numberOfServings:'10 порций',
-            present: 'мышь в подарок',
-            description:'',
-            weight: '0,5',
-            kg: 'кг',
-            dopDescription:'Чего сидишь? Порадуй котэ,',
-            url:'купи',
-            point:'.',
-            selectDescription:'Печень утки разварная с артишоками.',
-            disabledDescription:'Печалька, с фуа-гра закончился.',
-            hoverDescription:'Котэ не одобряет?',
-            disabled:true,
-            default: true,
-            hover:false,},
+            header: 'От риэлтора',
+            nameCard: '2-комнатная квартира',
+            taste: '1 этаж',
+            selectDescription:'Просторная, светлая квартира. Находится в центре города',
+            like:false,},
 
         {   id:2,
-            header: 'Сказочное заморское яство',
-            nameCard: 'Нямушка',
-            taste: 'с рыбой',
-            numberOfServings:'40 порций',
-            present: '2 мыши в подарок',
-            description:'',
-            weight: '2',
-            kg: 'кг',
-            dopDescription:'Чего сидишь? Порадуй котэ,',
-            url:'купи',
-            point:'.',
-            selectDescription:'Головы щучьи с чесноком да свежайшая сёмгушка.',
-            disabledDescription:'Печалька, с рыбой закончился.',
-            hoverDescription:'Котэ не одобряет?',
-            disabled:false,
-            default: true,
-            hover:false,},
+            header: 'От владельца',
+            nameCard: '2-комнатная квартира',
+            taste: '5 этаж',
+            selectDescription:'Просторная, светлая квартира. Находится в центре города',
+            like:true,},
 
         {   id:3,
-            header: 'Сказочное заморское яство',
-            nameCard: 'Нямушка',
-            taste: 'с курой',
-            numberOfServings:'100 порций',
-            present: '5 мышей в подарок',
-            description:'заказчик доволен',
-            weight: '5',
-            kg: 'кг',
-            dopDescription:'Чего сидишь? Порадуй котэ,',
-            url:'купи',
-            point:'.',
-            selectDescription:'Филе из циплят с трюфелями в бульоне.',
-            disabledDescription:'Печалька, с курой закончился.',
-            hoverDescription:'Котэ не одобряет?',
-            disabled:false,
-            default: true,
-            hover:false,},
+            header: 'От риэлтора',
+            nameCard: '2-комнатная квартира',
+            taste: '2 этаж',
+            selectDescription:'Просторная, светлая квартира. Находится в центре города',
+            like:true,},
     ],
 }
 const profileReducer = (state = initialState, action) => {
 
     switch(action.type) {
 
-        case SELECT:
+        case NOTSELECTLIKE:
             return {
                 ...state,
                 cardsArray: state.cardsArray.map(u => {
                     if (u.id === action.userID) {
-                        return {...u, default: false}
+                        return {...u, like: false}
                     }
                     return u
                 })
             }
 
-        case DEFAULT:
+        case SELECTLIKE:
             return {
                 ...state,
                 cardsArray: state.cardsArray.map(u => {
                     if (u.id === action.userID) {
-                        return {...u, default: true, hover: false}
+                        return {...u, like: true,}
                     }
                     return u
                 })
             }
 
-        case HOVER:
+        case SETCARD:
             return {
-                ...state,
-                cardsArray: state.cardsArray.map(u => {
-                    if (u.id === action.userID) {
-                        return {...u, hover: true}
-                    }
-                    return u
-                })
-               }
+                ...state, cardsArray: action.card}
 
         default:
             return state;
@@ -105,8 +64,16 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const selectCard = (userID) => ({type: SELECT, userID})
-export const defaultCard = (userID) => ({type: DEFAULT, userID})
-export const hoverUse = (userID) => ({type: HOVER, userID})
+export const setCard = (card) => ({type: SETCARD, card})
+export const selectLike = (userID) => ({type: SELECTLIKE, userID})
+export const notSelectLike = (userID) => ({type: NOTSELECTLIKE, userID})
+export const getCard = () => {
+    return (dispatch) => {
+        cardAPI.getCard().then(data => {
+            dispatch(setCard()) //без API не могу указать этот аргумент
+        })
+    }
+}
+
 
 export default profileReducer;
